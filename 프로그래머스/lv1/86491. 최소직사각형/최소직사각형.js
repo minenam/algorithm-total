@@ -1,17 +1,26 @@
 function solution(sizes) {
-    let maxSideValue = 0;
-    let minSideValue = 0;
-    let biggerValue = 0;
-    let smallerValue = 0;
+    let maxValue = 0;
+    let minValue = 0;
     
-    for(let i=0; i<sizes.length; i++) {
-        let w = sizes[i][0];
-        let h = sizes[i][1];
+    for (let size of sizes) {
+        let weight = size[0];
+        let height = size[1];
         
-        biggerValue = Math.max(w, h);
-        smallerValue = Math.min(w, h);
-        maxSideValue = Math.max(biggerValue, maxSideValue);
-        minSideValue = Math.max(smallerValue, minSideValue);
+        if (weight > height) {
+            if (weight > maxValue) {
+                maxValue = weight
+            }
+            if (height > minValue) {
+                minValue = height
+            }
+        } else {
+            if (height > maxValue) {
+                maxValue = height
+            }
+            if (weight > minValue) {
+                minValue = weight
+            }
+        }
     }
-    return maxSideValue * minSideValue;
+    return maxValue * minValue;
 }

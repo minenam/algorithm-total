@@ -5,7 +5,7 @@ function solution(arr) {
     }
     let softed = [...arr];
     // 내림차순 정렬로 최솟값 찾기
-    let min = softed.sort((a, b) => b - a).pop();
+    let min = softed.sort((a, b) => b - a)[arr.length-1];
     // 최솟값 제외하고 새로운 배열에 넣기
     let answer = arr.filter(v => v !== min);
     

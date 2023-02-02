@@ -2,17 +2,12 @@ function solution(n) {
     let answer = 0;
     let min = [];
     
-    let i = n;
+    let i = 1;
     // n 이하의 자연수 중 나머지가 1이 되는 수
-    while (i > 0){
+    while (i <= n){
         if (n % i === 1) {
-            min.push(i)
+            return i
         };
-        i--;
+        i++;
     }
-    
-    // 가장 작은 자연수
-    answer = Math.min(...min);
-    
-    return answer;
 }

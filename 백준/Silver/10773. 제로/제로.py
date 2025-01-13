@@ -3,14 +3,15 @@ import sys
 input = sys.stdin.read
 data = input().split()
 
-k = int(data[0])
-stack = []
+N = int(data[0])
+answers = []
 
-for i in range(1, k + 1):
-    num = int(data[i])
-    if num == 0:
-        stack.pop() 
+for i in range(1, N+1):
+    input_num = int(data[i])
+    if input_num == 0:
+        if answers:
+            answers.pop()
     else:
-        stack.append(num) 
-
-print(sum(stack))  
+        answers.append(input_num)
+        
+print(sum(answers))
